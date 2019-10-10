@@ -34,6 +34,9 @@
         else if ($_GET['failure'] == "wrongpass") {
           echo '<div class="w3-container w3-red"><p>Incorrect password. Please try again.</p></div>';
         }
+        else if ($_GET['failure'] == "movieUsed") {
+          echo '<div class="w3-container w3-red"><p>Error with this upload. Please try again later.</p></div>';
+        }
       }
       if(isset($_GET['success'])){
         if ($_GET['success'] == "signup") {
@@ -44,6 +47,9 @@
         }
         else if ($_GET['success'] == "logout") {
           echo '<div class="w3-container w3-green"><p>You have logged out. Please come again.</p></div>';
+        }
+        else if ($_GET['success'] == "uploaded") {
+          echo '<div class="w3-container w3-green"><p>The movie has been sucessfully uploaded!</p></div>';
         }
       }
 
