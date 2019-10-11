@@ -11,7 +11,7 @@ if (isset($_POST['login-submit'])) {
     $sql = "SELECT * FROM users WHERE uidUsers=?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-      header("Location: ../index.php?failure=sqlerror");
+      header("Location: http://manassehedwardsportfolio-com.stackstaging.com/index.php?failure=sqlerror");
       exit();
     }
     else {
@@ -21,7 +21,7 @@ if (isset($_POST['login-submit'])) {
       if ($row = mysqli_fetch_assoc($result)) {
         $passCheck = password_verify($password, $row['pwdUsers']);
         if ($passCheck == false) {
-          header("Location: ../index.php?failure=wrongpass");
+          header("Location: http://manassehedwardsportfolio-com.stackstaging.com/index.php?failure=wrongpass");
           exit();
         }
         elseif ($passCheck == true) {
@@ -34,16 +34,16 @@ if (isset($_POST['login-submit'])) {
           $_SESSION['Admin'] = $row['Admin'];
 
 
-          header("Location: ../index.php?success=login");
+          header("Location: http://manassehedwardsportfolio-com.stackstaging.com/index.php?success=login");
           exit();
         }
         else {
-          header("Location: ../index.php?failure=wrongpass");
+          header("Location: http://manassehedwardsportfolio-com.stackstaging.com/index.php?failure=wrongpass");
           exit();
         }
       }
       else {
-        header("Location: ../index.php?failure=nouser");
+        header("Location: http://manassehedwardsportfolio-com.stackstaging.com/index.php?failure=nouser");
         exit();
       }
 

@@ -6,12 +6,18 @@
     echo "<pre>", print_r($_POST), "</pre>";
     echo "<pre>", print_r($_FILES), "</pre>";
     echo "<pre>", print_r($_FILES['movieImage']), "</pre>";
+
+
+
     $movieName = $_POST['movieName'];
     $bio = $_POST['bio'];
     $bio = str_replace("'","''", $bio);
     $movieRating = $_POST['movieRating'];
     $movieImageName = time(). '_' . $_FILES['movieImage']['name'];
+
     $target = '../img/' . $movieImageName;
+
+
     if (move_uploaded_file($_FILES['movieImage']['tmp_name'], $target)) {
       echo "ok";
       $sql = "SELECT movieName FROM movies WHERE movieName=?";

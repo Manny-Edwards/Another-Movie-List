@@ -15,28 +15,28 @@ if (isset($_POST['register-submit'])) {
     // check if name only contains letters and whitespace
   if (!preg_match("/^[a-zA-Z]*$/",$firstname)) {
       $nameErr = "Only letters allowed";
-      header("Location: ../index.php?failure=nameError");
+      header("Location: http://manassehedwardsportfolio-com.stackstaging.com/index.php?failure=nameError");
       exit();
   }
   if (!preg_match("/^[a-zA-Z]*$/",$lastname)) {
       $nameErr = "Only letters allowed";
-      header("Location: ../index.php?failure=nameError");
+      header("Location: http://manassehedwardsportfolio-com.stackstaging.com/index.php?failure=nameError");
       exit();
   }
     // check if e-mail address is well-formed
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $emailErr = "Invalid email format";
-    header("Location: ../index.php?failure=emailError");
+    header("Location: http://manassehedwardsportfolio-com.stackstaging.com/index.php?failure=emailError");
     exit();
   }
   else if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
     $usernameErr = "Invalid username format";
-    header("Location: ../index.php?failure=usernameError");
+    header("Location: http://manassehedwardsportfolio-com.stackstaging.com/index.php?failure=usernameError");
     exit();
   }
   elseif ($password !== $passwordRepeat) {
     $passwordRepeatErr = "Your passwords do not match";
-    header("Location: ../index.php?failure=passwordError");
+    header("Location: http://manassehedwardsportfolio-com.stackstaging.com/index.php?failure=passwordError");
     exit();
   }
   else {
@@ -44,7 +44,7 @@ if (isset($_POST['register-submit'])) {
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
       $usernameErr = "This username already exists";
-      header("Location: ../index.php?failure=usernameUsed");
+      header("Location: http://manassehedwardsportfolio-com.stackstaging.com/index.php?failure=usernameUsed");
       exit();
     }
     else {
@@ -54,7 +54,7 @@ if (isset($_POST['register-submit'])) {
       $resultCheck = mysqli_stmt_num_rows($stmt);
       if ($resultCheck > 0) {
         $usernameErr = "This username already exists";
-        header("Location: ../index.php?failure=usernameUsed");
+        header("Location: http://manassehedwardsportfolio-com.stackstaging.com/index.php?failure=usernameUsed");
         exit();
       }
       else {
@@ -62,7 +62,7 @@ if (isset($_POST['register-submit'])) {
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
           $usernameErr = "This username already exists";
-          header("Location: ../index.php?failure=usernameUsed");
+          header("Location: http://manassehedwardsportfolio-com.stackstaging.com/index.php?failure=usernameUsed");
           exit();
         }
         else {
@@ -73,7 +73,7 @@ if (isset($_POST['register-submit'])) {
           $msg = "<h1>Hi There!</h1>\nThank you for making an account. We hope you enjoy your experience!";
           mail($email,"Signup_Verification",$msg);
 
-          header("Location: ../index.php?success=signup");
+          header("Location: http://manassehedwardsportfolio-com.stackstaging.com/index.php?success=signup");
           exit();
         }
       }
@@ -83,6 +83,6 @@ if (isset($_POST['register-submit'])) {
   mysqli_close($conn);
 }
 else {
-  header("Location: ../index.php");
+  header("Location: http://manassehedwardsportfolio-com.stackstaging.com/index.php");
   exit();
 }
