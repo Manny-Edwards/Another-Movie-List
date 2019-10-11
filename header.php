@@ -49,7 +49,7 @@
 
 					<button id="login" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black w3-right" style="margin:16px">Login</button>
 					<div id="id01" class="w3-modal" >
-						<form class="w3-modal-content" action="includes/login.inc.php" method="post">
+						<form class="w3-modal-content" action="http://manassehedwardsportfolio-com.stackstaging.com/includes/login.inc.php" method="post">
 						  <div class="w3-container">
 							<span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
 							<header class="w3-text-black"><h3>Login</h3></header>
@@ -66,7 +66,7 @@
 
 					<button id="register" onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-black w3-right" style="margin:16px">Register</button>
 					<div id="id02" class="w3-modal" >
-						<form class="w3-modal-content" action="includes/signup.inc.php" method="post">
+						<form class="w3-modal-content" action="http://manassehedwardsportfolio-com.stackstaging.com/includes/signup.inc.php" method="post">
 						  <div class="w3-container">
 							<span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
 							<header class="w3-text-black"><h3>Register</h3></header>

@@ -11,27 +11,6 @@
   $result = mysqli_query($conn, $sql);
   $movies = mysqli_fetch_array($result);
 
-  function movieAverage($conn,$movieName){
-    $sum = 0;
-    $count = 0;
-    $sql = "SELECT * FROM comments";
-    $result = mysqli_query($conn, $sql);
-    while ($row = mysqli_fetch_array($result)) {
-      if ($row['movieName'] == $movieName) {
-        $sum = $sum+$row['movieRating'];
-        $count=$count+1;
-      }
-    }
-    if ($count == 0) {
-      return 0;
-    }
-    $average = $sum / $count;
-    $sql = "UPDATE movies SET movieRating='$average' WHERE movieName='$movieName'";
-    $result = mysqli_query($conn, $sql);
-
-    return intval($average);
-  }
-
   ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -49,7 +28,7 @@
 
       <div class="w3-container">
         <h3 class="w3-center">Average rating:
-        <?php echo movieAverage($conn,$movies['movieName']); ?></h3>
+        <?php echo $movies['movieRating']; ?></h3>
       </div>
 
       <div class="w3-container">

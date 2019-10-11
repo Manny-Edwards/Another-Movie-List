@@ -21,7 +21,7 @@
 
   <body>
     <div class="w3-card col-4 offset-md-4" style="margin-top:20px;">
-      <form action="includes/movie.inc.php" method="post" enctype="multipart/form-data">
+      <form action="http://manassehedwardsportfolio-com.stackstaging.com/includes/movie.inc.php" method="post" enctype="multipart/form-data">
         <div class="form-group text-center">
           <input class="w3-input w3-xlarge" type="text" placeholder="Movie Name" name="movieName" id="movieName" style="width:100%; text-align:center" value="" required>
         </div>
