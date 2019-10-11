@@ -70,7 +70,7 @@ if (isset($_POST['register-submit'])) {
           mysqli_stmt_bind_param($stmt, "sssss", $firstname, $lastname, $username, $email, $hashedPwd);
           mysqli_stmt_execute($stmt);
 
-          $msg = "<h1>Hi There!</h1>\nThank you for making an account. We hope you enjoy your experience!";
+          $msg = "Hi There!\nThank you for making an account. We hope you enjoy your experience!";
           mail($email,"Signup_Verification",$msg);
 
           header("Location: http://manassehedwardsportfolio-com.stackstaging.com/index.php?success=signup");
