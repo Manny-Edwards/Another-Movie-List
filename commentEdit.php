@@ -37,7 +37,7 @@
         </div>
       </form>
       </div>";
-
+	  header("Location: http://manassehedwardsportfolio-com.stackstaging.com/index.php");
       ob_end_flush();
       ?>
 
